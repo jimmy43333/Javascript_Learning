@@ -1,2 +1,2 @@
-# Javascript_JQuery_Learning
+# Javascript_Learning
 The practice of javascript basic coding
