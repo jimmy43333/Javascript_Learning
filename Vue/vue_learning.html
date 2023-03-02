@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "_//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Vue Learning</title>
+<meta http-equiv="Content-Type" content="text/html"; charset="uft-8"/>
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Vue 3.0 -->
+<script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+<div id="vue1">
+    {{ message }}
+</div>
+<div id="vue2">
+    Name: %{ name }%
+    Age:  %{ age }%
+    Sex:  %{ sex }%
+</div>
+<div id="vue3">
+    Name: %{ name }%
+    Age:  %{ age }%
+    Sex:  %{ sex }%
+</div>
+<div id="vue4"></div>
+
+<div id="money_converter">
+<div>台幣<input type="text" v-model.number="twd"></div>
+<div>日幣<input type="text" v-model.lazy.number="jpy"></div>
+<div>美元<input type="text" v-model.lazy.number="usd"></div>
+<p> 1 台幣 = {{ twd2jpy }} 日幣, 1 台幣 = {{ twd2usd }} 美元 </p>
+</div>
+
+<div id="vue5">
+    <p>
+        <button @click="zoombig()">+</button>
+        <button @click="zoomsmall()">-</button>
+    </p>
+    <p>
+        <img :src="imageSrcUrl" :with="imageW" :height="imageH" @click="change_img()">
+    </p>
+</div>
+
+<div id="input_message">
+    <input v-model.trim="single_message" :class="{'error': single_message.length > 10 }" placeholder="Edit Me"><p>Input Message: {{ single_message }}, Good!! </p>
+    <p><span> Multiline Message: </span>{{ multi_message }} </p>
+    <textarea v-model="multi_message" :style="multi_style" placeholder="Add Multi message"></textarea>
+    <textarea placeholder="Add Multi message 2">{{ multi_message }}</textarea><br>
+    <span>Select Fruit: {{ picked }}</span><br>
+    <input type="radio" id="one" value="Apple" v-model="picked"><label for="one">Apple</label>
+    <input type="radio" id="two" value="Orange" v-model="picked"><label for="two">Orange</label><br>
+    <span>Checked Names: {{ checkedNames }} </span><br>
+    <input type="checkbox" id="jimmy" value="Jimmy" v-model="checkedNames"><label for="jimmy">Jimmy</label>
+    <input type="checkbox" id="elena" value="Elena" v-model="checkedNames"><label for="elena">Elena</label>
+    <br>
+    <select v-model="selected" >
+        <option disabled value="">Please Choose</option>
+        <option>Taipei</option>
+        <option>Kaohsiung</option>
+        <option>Taichung</option>
+    </select>
+    <p>Selected: {{ selected || 'None' }}</p>
+</div>
+
+</body>
+<!-- Vue 2.0 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+<script src="vue_learning.js"></script>
+</html>
+
+
