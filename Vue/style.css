@@ -1,0 +1,45 @@
+.error {
+    border: red solid 1px;
+    color: red;
+}
+
+.wrap {
+    float: left;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+.outer {
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    padding: 25px;
+    background-color: goldenrod;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.inner{
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -45px;
+    margin-top: -55px;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 70px;
+    background-color: #777;
+    color: #fff;
+}
+
+.outer:hover{
+    background-color: gold;
+}
+
+.inner:hover{
+    background-color: #ccc;
+}
+

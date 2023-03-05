@@ -63,6 +63,28 @@
     <p>Selected: {{ selected || 'None' }}</p>
 </div>
 
+<div id="event_test">
+    <div class="wrap">
+        click without stopPropagation
+        <div class="outer" @click="alert('Outer', 'L')">
+            <span>Outer</span>
+            <div class="inner" @click="alert('Inner', 'L')">Inner</div>
+        </div>
+    </div>
+    
+    <div class="wrap">
+        click with stopPropagation
+        <div class="outer" @click="alert('Outer', 'R')">
+          <span>Outer</span>
+            <div class="inner" @click.stop="alert('Inner', 'R')">Inner</div>
+        </div>
+    </div>
+
+    <div v-show="msg.length > 0" :style="result_style">
+        <div v-for="m in msg">{{ m }}</div>
+    </div>
+</div>
+
 </body>
 <!-- Vue 2.0 -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->

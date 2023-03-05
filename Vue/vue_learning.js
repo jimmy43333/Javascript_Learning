@@ -140,3 +140,33 @@ const inputVue = Vue.createApp({
     }
 })
 inputVue.mount("#input_message");
+
+const eventVue = Vue.createApp({
+	data(){
+  	return {
+      msg: [],
+      which_block: "R"
+    }
+  },
+  methods: {
+    alert(val, who){
+        if (this.msg.length > 5 || this.which_block != who){
+            this.msg = []
+        }
+        this.which_block = who
+		this.msg.push(val);
+    }
+  },
+  computed:{
+    result_style: function(){
+        if (this.which_block == "L"){
+            color = '#488'
+        }else{
+            color = '#666'
+        }
+        return{
+            'background-color': color
+        };
+    }
+  }
+}).mount('#event_test');
