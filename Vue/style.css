@@ -1,3 +1,7 @@
+body{
+    background: -webkit-linear-gradient(left, steelblue, teal);
+}
+
 .error {
     border: red solid 1px;
     color: red;
@@ -13,11 +17,27 @@
     cursor: pointer;
     position: relative;
     width: 150px;
-    height: 150px;
+    height: 180px;
     padding: 25px;
     background-color: goldenrod;
     text-align: center;
     margin-top: 1rem;
+    color: #fff;
+}
+
+.middle{
+    cursor: pointer;
+    position: relative;
+    top: 40%;
+    left: 30%;
+    margin-left: -30px;
+    margin-top: -65px;
+    width: 120px;
+    height: 150px;
+    text-align: center;
+    line-height: 70px;
+    background-color: navy;
+    color: #fff;
 }
 
 .inner{
@@ -25,13 +45,13 @@
     position: relative;
     top: 50%;
     left: 50%;
-    margin-left: -45px;
-    margin-top: -55px;
-    width: 90px;
-    height: 90px;
+    margin-left: -40px;
+    margin-top: -90px;
+    width: 80px;
+    height: 80px;
     text-align: center;
     line-height: 70px;
-    background-color: #777;
+    background-color: teal;
     color: #fff;
 }
 
@@ -39,7 +59,64 @@
     background-color: gold;
 }
 
-.inner:hover{
-    background-color: #ccc;
+.middle:hover{
+    background-color: skyblue;
 }
 
+.inner:hover{
+    background-color: lime;
+}
+
+.gradient-lavender{
+    /* 設置線性漸層的背景，起始顏色為 wheat，結束顏色為透明 */
+    background: -webkit-linear-gradient(left, lavender, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, lavender, rgba(255, 255, 255, 0));
+    /* 設置圓角 */
+    border-radius: 10px;
+    /* 設置陰影 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 100px;
+}
+
+.gradient-wheat{
+    /* 設置線性漸層的背景，起始顏色為 wheat，結束顏色為透明 */
+    background: -webkit-linear-gradient(left, wheat, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, wheat, rgba(255, 255, 255, 0));
+    /* 設置圓角 */
+    border-radius: 10px;
+    /* 設置陰影 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 100px;
+}
+  
+.gradient-violet {
+    /* 設置線性漸層的背景，起始顏色為 violet，結束顏色為透明 */
+    background: -webkit-linear-gradient(left, violet, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, violet, rgba(255, 255, 255, 0));
+    /* 設置圓角 */
+    border-radius: 10px;
+    /* 設置陰影 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+  
+.gradient-thistle {
+    /* 設置線性漸層的背景，起始顏色為 thistle，結束顏色為透明 */
+    background: -webkit-linear-gradient(left, thistle, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, thistle, rgba(255, 255, 255, 0));
+    /* 設置圓角 */
+    border-radius: 10px;
+    /* 設置陰影 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.flyer {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    clip-path: polygon(50% 50%, 40% 0, 60% 0);
+    transform-origin: center;
+    /* transform: rotate(45deg); */
+    background-color: blue;
+}

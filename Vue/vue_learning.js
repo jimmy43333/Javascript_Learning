@@ -152,17 +152,25 @@ const eventVue = Vue.createApp({
     alert(val, who){
         if (this.msg.length > 5 || this.which_block != who){
             this.msg = []
+        }else{
+		    this.msg.push(val);
         }
         this.which_block = who
-		this.msg.push(val);
     }
   },
   computed:{
     result_style: function(){
+        if (this.msg.length == 0){
+            return{
+                'background-color': 'snow'
+            };
+        }
         if (this.which_block == "L"){
-            color = '#488'
+            color = 'peachpuff'
+        }else if(this.which_block == "M"){
+            color = 'thistle'
         }else{
-            color = '#666'
+            color = 'lavender'
         }
         return{
             'background-color': color
@@ -170,3 +178,17 @@ const eventVue = Vue.createApp({
     }
   }
 }).mount('#event_test');
+
+const showVue = Vue.createApp({
+    data(){
+        return {
+            show: true
+        }
+    }
+}).mount('#sss')
+
+// wheat
+// violet
+// honeydew
+// peachpuff
+// thistle

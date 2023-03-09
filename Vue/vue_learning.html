@@ -68,15 +68,32 @@
         click without stopPropagation
         <div class="outer" @click="alert('Outer', 'L')">
             <span>Outer</span>
-            <div class="inner" @click="alert('Inner', 'L')">Inner</div>
+            <div class ="middle" @click="alert('Middle', 'L')">
+                <span>Middle</span>
+                <div class="inner" @click="alert('Inner', 'L')">Inner</div>
+            </div>
         </div>
     </div>
     
     <div class="wrap">
-        click with stopPropagation
-        <div class="outer" @click="alert('Outer', 'R')">
-          <span>Outer</span>
-            <div class="inner" @click.stop="alert('Inner', 'R')">Inner</div>
+        click with stopPropagation at middle
+        <div class="outer" @click="alert('Outer', 'M')">
+            <span>Outer</span>
+            <div class ="middle" @click.stop="alert('Middle', 'M')">
+                <span>Middle</span>
+                <div class="inner" @click="alert('Inner', 'M')">Inner</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        click with event capture
+        <div class="outer" @click.capture="alert('Outer', 'R')">
+            <span>Outer</span>
+            <div class ="middle" @click="alert('Middle', 'R')">
+                <span>Middle</span>
+                <div class="inner" @click="alert('Inner', 'R')">Inner</div>
+            </div>
         </div>
     </div>
 
@@ -84,6 +101,26 @@
         <div v-for="m in msg">{{ m }}</div>
     </div>
 </div>
+
+<div id='sss' class="wheat-box">
+    <input type="checkbox" v-model="show">
+    <div v-if="show">v-if</div>
+    <div v-show="show">v-show</div>
+    <div class="arrow" @click="show"></div>
+</div>
+
+<div class="gradient-wheat">
+    This div has a wheat gradient background and rounded corners.
+  </div>
+  
+  <div class="gradient-violet">
+    This div has a violet gradient background and rounded corners.
+  </div>
+  
+  <div class="gradient-thistle">
+    This div has a thistle gradient background and rounded corners.
+</div>
+
 
 </body>
 <!-- Vue 2.0 -->
