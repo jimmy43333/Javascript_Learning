@@ -4,18 +4,34 @@
 <head>
 <title>Vue Learning</title>
 <meta http-equiv="Content-Type" content="text/html"; charset="uft-8"/>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="dart.css">
 <!-- Vue 3.0 -->
 <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-<div id="board">
-<div class="flyer" style="background-color: red" @click="show"></div>
-<div class="flyer" style="background-color: green; transform: rotate(20deg);"></div>
-<div class="flyer" style="background-color: yellow; transform: rotate(40deg);"></div>
-<div class="flyer" style="background-color: blue; transform: rotate(60deg);"></div>
-<div class="flyer" style="background-color: orange;transform: rotate(80deg);"></div>
+<div class="outer">
+    <div id="board">
+        <template v-for="i in 20">
+            <div :class="{'clockeven': i % 2 == 0, 'clockodd': i%2 == 1 }" :style="board_style(i)" @click="show(i)">{{ scores[i-1] }}</div>
+        </template>
+        <!-- <div class="bulleye_border"></div> -->
+        <div class='bulleye' @click="show(50)">50</div>
+    </div>
+    <div id="player_1" class="show">
+        <label>
+            <input type="checkbox" v-model="AisShow">Player 1
+        </label>
+        <div v-if="AisShow">Scores: {{ shoot }}</div>
+    </div>
+    <div id="player_2" class="show">
+        <label>
+            <input type="checkbox" v-model="BisShow">Player 2
+        </label>
+        <div v-if="BisShow">Scores: {{ shoot }}</div>
+    </div>
+    </div>
 </div>
+
 </body>
 <!-- Vue 2.0 -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
